@@ -9,6 +9,9 @@
   {{ if eq .URL "/why/" }}
   <h1 class="of-heading of-heading--xl">Why should I use the operator framework?</h1>
   {{ end }}
+  {{ if eq .URL "/how/" }}
+  <h1 class="of-heading of-heading--xl">How to use the Operator Framework</h1>
+  {{ end }}
   {{ if eq .URL "/best-practices/" }}
   <h1 class="of-heading of-heading--xl">What are some best practices?</h1>
   {{ end }}
@@ -21,6 +24,7 @@
 </section>
 {{ end }}
 {{define "main"}}
+
 {{ if eq .URL "/faq/" }}
 <section class="of-section-page-intro">
   <header class="of-section-page-intro__header">
@@ -30,8 +34,20 @@
 </section>
 <section class="of-section-page-intro__content of-page--faq">
 {{ end }}
+
+{{ if eq .URL "/how/" }}
+<!-- TODO this needs a new css class? can we have a generic one?-->
+<section class="of-section-page-intro__content of-page--faq">
+{{end}}
+
 {{ .Content }}
+
 {{ if eq .URL "/faq/" }}
 </section>
 {{end}}
+
+{{ if eq .URL "/how/" }}
+</section>
+{{end}}
+
 {{end}}
